@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/CSS/style.css">
+    <title>Nanny's Recipes</title>
+</head>
+
+<body>
+    <div id="toast"></div>
+    <header>
+        <a href="./index.html">
+            <h1>Nanny's</br>Recipes</h1>
+        </a>
+        <div class="image">
+            <img src="./assets/images/istockphoto-941858854-612x612.jpg" alt="series d'epice">
+        </div>
+        <div class="search-bar">
+            <div class="radio-buttons">
+                <label>
+                    <input type="radio" name="searchOption" value="titre" checked>
+                    <span class="custom-radio"></span>
+                    Titre
+                </label>
+                <label>
+                    <input type="radio" name="searchOption" value="ingredients">
+                    <span class="custom-radio"></span>
+                    Ingrédients
+                </label>
+                <label>
+                    <input type="radio" name="searchOption" value="categorie">
+                    <span class="custom-radio"></span>
+                    Catégorie
+                </label>
+            </div>
+            <input type="text" class="search-input" placeholder="Rechercher...">
+            <button type="submit" class="search-button">Rechercher</button>
+        </div>
+    </header>
+    <main>
+        <section id="recettes">
+            <h2>Recettes !</h2>
+            <div class="crea"></div>
+        </section>
+
+        <section id="new-recipe">
+            <form id="new-recipe-form">
+                <div class="ajout">
+                    <div class="info">
+                        <input type="text" id="new-recipe-title" placeholder="Titre de la recette" required>
+                        <textarea id="new-recipe-instructions" placeholder="Instructions de la recette"
+                            required></textarea>
+                        <input type="text" id="new-recipe-preptime" placeholder="Temps de préparation (min)" required>
+                        <input type="text" id="new-recipe-cooktime" placeholder="Temps de cuisson (min)" required>
+                        <input type="text" id="new-recipe-difficulty" placeholder="Difficulté" required>
+                        <input type="text" id="new-recipe-category" placeholder="Catégorie de la recette" required>
+                    </div>
+                    <div id="newrecipeingredients" required>Ingrédients Disponible : </div>
+                    <div class="addbutt">
+                        <button type="submit">Ajouter Recette</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>Copyright : Mixyz.dev</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

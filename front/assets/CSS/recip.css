@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #1a1a1a;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0 0 10px 10px;
+    border-bottom: 5px solid #ff7f0e;
+    box-shadow: 0 4px 8px rgba(255, 127, 14, 0.5);
+}
+
+header h1 {
+    font-size: 5em; /* Plus grand */
+    color: #ffffff;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.7); /* Plus de visibilité */
+    animation: fadeIn 1s ease-in-out;
+}
+
+header .image {
+    height: 200px;
+    width: 100%;
+    position: relative;
+}
+
+header .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+section#recettes {
+    margin-top: 20px;
+    text-align: center;
+}
+
+section#recettes h2 {
+    font-size: 2.5em;
+    color: #ff7f0e;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    animation: bounce 1s ease-in-out infinite;
+}
+
+.crea {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centre les recettes */
+    gap: 10px;
+}
+
+.crea .recipe {
+    font-family: 'Oswald';
+    background: #ffebda;
+    border: 2px solid #ff7f0e;
+    border-radius: 0 10px 10px 0; /* Coins arrondis en haut à droite et en bas à gauche */
+    padding: 20px;
+    width: 300px; /* Recettes plus grandes */
+    box-shadow: 0 4px 8px rgba(255, 127, 14, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 0; /* Supprime l'espace autour des recettes */
+}
+
+.recipe button{
+    height: 30px;
+    background-color: #2a2a2a;
+    border-radius: 20px;
+    color: white;
+    border: none;
+    border: 1px solid rgb(216, 139, 39);
+    box-shadow: 0 4px 8px rgba(255, 127, 14, 0.5);
+}
+
+.crea .recipe:hover {
+    box-shadow: 0 8px 16px rgba(255, 127, 14, 0.8);
+}
+
+.crea .recipe h3 {
+    font-size: 1.5em;
+    color: #ff7f0e;
+    margin-bottom: 10px;
+    animation: fadeInUp 0.5s ease-in-out;
+}
+
+.crea .recipe p {
+    font-size: 1em;
+    color: #333;
+}
+
+.edit-form{
+    font-family: 'Oswald';
+    display: flex;
+    flex-direction: column;
+    background: #292929;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin: 20px auto;
+    width: 50%;
+    font-family: 'Roboto', sans-serif;
+    color: #e0e0e0;
+    cursor: pointer;
+}
+
+.edit-form label {
+    font-family: 'Oswald';
+    font-size: 1.2em;
+    color: #ff7f0e;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.edit-form button {
+    font-family: 'Oswald';
+    padding: 10px 20px;
+    background: #ff7f0e;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-size: 1.2em;
+}
+
+.edit-form button:hover {
+    background: #ff9f2e;
+}
+
+.selected {
+    color: #ffb685;
+    cursor: pointer;
+}
+
+footer {
+    font-family: 'Oswald';
+    padding: 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+    border-top: 2px solid #3a3a3a;
+    color: #ff7f0e;
+}
+
+.toast {
+    visibility: hidden;
+    min-width: 250px;
+    min-height: 50px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.toast.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 30px; opacity: 1;}
+}
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;} 
+    to {bottom: 0; opacity: 0;}
+}
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .edit-form {
+        width: 80%;
+    }
+}
